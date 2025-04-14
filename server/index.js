@@ -29,16 +29,16 @@ app.get("/timezones", (req, res) => {
 app.post("/api/timezones", (req, res) => {
   const { from, to, timezone } = req.body;
 
+  console.log("Received timezone from client:", timezone);
   console.log("From:", from);
   console.log("To:", to);
   console.log(" ");
-  console.log("Received timezone from client:", timezone);
 
   res.json({
     message: "Received!",
+    timezone,
     from,
-    to,
-    timezone
+    to
   });
 
   console.log(`[${new Date().toISOString()}] Timezone received: ${timezone}`);
