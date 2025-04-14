@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const fetch = require('node-fetch'); // Import node-fetch for server-side fetch
+//const fetch = require('node-fetch'); // Import node-fetch for server-side fetch
 
 const app = express();
 const PORT = 3000;
