@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="timezones.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Zones</title>
+</head>
+<body>
+    <h1>Time Zone Checker</h1>
+
+  <div class="form-group">
+    <label for="from">From:</label>
+    <input type="text" id="fromCity" placeholder="e.g. Paris">
+  </div>
+
+  <div class="form-group">
+    <label for="to">To:</label>
+    <input type="text" id="toCity" placeholder="e.g. Tokyo">
+  </div>
+
+  <button id="searchBtn">Search</button>
+  <div id="result"></div>
+  <script src="timezones.js"></script>
+  <script>
+    fetch("/timezones") 
+      .then(res => res.json())
+      .then(data => {
+        console.log("Time zone information: ", data);
+
+    document.getElementById("timezoneInput").value = data.timezone;
+    });
+  </script>
+</body>
+</html>

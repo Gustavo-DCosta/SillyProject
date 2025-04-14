@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Timezones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .utc {
+            background-color: #e6f7ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Worldwide Timezones</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>UTC Offset</th>
+                <th>Timezone Code</th>
+                <th>Region/Cities</th>
+                <th>Current Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>UTC-12:00</td>
+                <td>BIT</td>
+                <td>Baker Island Time</td>
+                <td id="time-12"></td>
+            </tr>
+            <tr>
+                <td>UTC-11:00</td>
+                <td>SST</td>
+                <td>Samoa, Niue</td>
+                <td id="time-11"></td>
+            </tr>
+            <tr>
+                <td>UTC-10:00</td>
+                <td>HST</td>
+                <td>Hawaii, Tahiti</td>
+                <td id="time-10"></td>
+            </tr>
+            <tr>
+                <td>UTC-09:00</td>
+                <td>AKST</td>
+                <td>Alaska</td>
+                <td id="time-9"></td>
+            </tr>
+            <tr>
+                <td>UTC-08:00</td>
+                <td>PST</td>
+                <td>Los Angeles, Vancouver, Tijuana</td>
+                <td id="time-8"></td>
+            </tr>
+            <tr>
+                <td>UTC-07:00</td>
+                <td>MST</td>
+                <td>Denver, Phoenix, Calgary</td>
+                <td id="time-7"></td>
+            </tr>
+            <tr>
+                <td>UTC-06:00</td>
+                <td>CST</td>
+                <td>Chicago, Mexico City, Winnipeg</td>
+                <td id="time-6"></td>
+            </tr>
+            <tr>
+                <td>UTC-05:00</td>
+                <td>EST</td>
+                <td>New York, Toronto, Lima</td>
+                <td id="time-5"></td>
+            </tr>
+            <tr>
+                <td>UTC-04:00</td>
+                <td>AST</td>
+                <td>Halifax, Caracas, Santiago</td>
+                <td id="time-4"></td>
+            </tr>
+            <tr>
+                <td>UTC-03:00</td>
+                <td>BRT</td>
+                <td>São Paulo, Buenos Aires, Montevideo</td>
+                <td id="time-3"></td>
+            </tr>
+            <tr>
+                <td>UTC-02:00</td>
+                <td>FNT</td>
+                <td>Fernando de Noronha, South Georgia</td>
+                <td id="time-2"></td>
+            </tr>
+            <tr>
+                <td>UTC-01:00</td>
+                <td>CVT</td>
+                <td>Cape Verde, Azores</td>
+                <td id="time-1"></td>
+            </tr>
+            <tr class="utc">
+                <td>UTC±00:00</td>
+                <td>GMT</td>
+                <td>London, Dublin, Lisbon, Casablanca</td>
+                <td id="time0"></td>
+            </tr>
+            <tr>
+                <td>UTC+01:00</td>
+                <td>CET</td>
+                <td>Paris, Berlin, Rome, Madrid</td>
+                <td id="time1"></td>
+            </tr>
+            <tr>
+                <td>UTC+02:00</td>
+                <td>EET</td>
+                <td>Athens, Cairo, Johannesburg, Kiev</td>
+                <td id="time2"></td>
+            </tr>
+            <tr>
+                <td>UTC+03:00</td>
+                <td>MSK</td>
+                <td>Moscow, Istanbul, Riyadh, Nairobi</td>
+                <td id="time3"></td>
+            </tr>
+            <tr>
+                <td>UTC+04:00</td>
+                <td>GST</td>
+                <td>Dubai, Baku, Tbilisi</td>
+                <td id="time4"></td>
+            </tr>
+            <tr>
+                <td>UTC+05:00</td>
+                <td>PKT</td>
+                <td>Karachi, Tashkent, Islamabad</td>
+                <td id="time5"></td>
+            </tr>
+            <tr>
+                <td>UTC+05:30</td>
+                <td>IST</td>
+                <td>New Delhi, Mumbai, Colombo</td>
+                <td id="time5-30"></td>
+            </tr>
+            <tr>
+                <td>UTC+06:00</td>
+                <td>BST</td>
+                <td>Dhaka, Almaty, Omsk</td>
+                <td id="time6"></td>
+            </tr>
+            <tr>
+                <td>UTC+07:00</td>
+                <td>ICT</td>
+                <td>Bangkok, Jakarta, Hanoi</td>
+                <td id="time7"></td>
+            </tr>
+            <tr>
+                <td>UTC+08:00</td>
+                <td>CST</td>
+                <td>Beijing, Hong Kong, Singapore, Taipei</td>
+                <td id="time8"></td>
+            </tr>
+            <tr>
+                <td>UTC+09:00</td>
+                <td>JST</td>
+                <td>Tokyo, Seoul, Pyongyang</td>
+                <td id="time9"></td>
+            </tr>
+            <tr>
+                <td>UTC+10:00</td>
+                <td>AEST</td>
+                <td>Sydney, Melbourne, Brisbane</td>
+                <td id="time10"></td>
+            </tr>
+            <tr>
+                <td>UTC+11:00</td>
+                <td>AEDT</td>
+                <td>New Caledonia, Solomon Islands</td>
+                <td id="time11"></td>
+            </tr>
+            <tr>
+                <td>UTC+12:00</td>
+                <td>NZST</td>
+                <td>Auckland, Wellington, Fiji</td>
+                <td id="time12"></td>
+            </tr>
+            <tr>
+                <td>UTC+13:00</td>
+                <td>NZDT</td>
+                <td>Samoa, Tonga</td>
+                <td id="time13"></td>
+            </tr>
+            <tr>
+                <td>UTC+14:00</td>
+                <td>LINT</td>
+                <td>Line Islands, Kiribati</td>
+                <td id="time14"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function updateTimes() {
+            const now = new Date();
+            const utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000); // Convert to UTC
+            
+            for (let offset = -12; offset <= 14; offset++) {
+                let selector = `#time${offset}`;
+                if (offset === -12) selector = "#time-12";
+                else if (offset === -11) selector = "#time-11";
+                else if (offset === -10) selector = "#time-10";
+                else if (offset === -9) selector = "#time-9";
+                else if (offset === -8) selector = "#time-8";
+                else if (offset === -7) selector = "#time-7";
+                else if (offset === -6) selector = "#time-6";
+                else if (offset === -5) selector = "#time-5";
+                else if (offset === -4) selector = "#time-4";
+                else if (offset === -3) selector = "#time-3";
+                else if (offset === -2) selector = "#time-2";
+                else if (offset === -1) selector = "#time-1";
+                
+                const timeElement = document.querySelector(selector);
+                if (timeElement) {
+                    const localTime = new Date(utc.getTime() + offset * 3600000);
+                    timeElement.textContent = localTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+                }
+            }
+            
+            // Handle special half-hour time zones
+            const timeElement530 = document.querySelector("#time5-30");
+            if (timeElement530) {
+                const localTime = new Date(utc.getTime() + (5 * 3600000 + 30 * 60000));
+                timeElement530.textContent = localTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+            }
+        }
+        
+        // Update times immediately and then every minute
+        updateTimes();
+        setInterval(updateTimes, 60000);
+    </script>
+</body>
+</html>
