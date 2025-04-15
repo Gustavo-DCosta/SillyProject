@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="timezones.css" />
+  <link rel="stylesheet" href="timezones.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Time Zones</title>
+  <title>Calculator</title>
 </head>
 <body>
-    <h1>Time Zone Checker</h1>
-
-  <div class="form-group">
-    <label for="from">From:</label>
-    <input type="text" id="fromCity" placeholder="e.g. Paris">
+  <h1>More then a simple Calculator</h1>
+  <div class="container">
+    <div class="banner-content">
+      <h1 class="title">Tick Tock, It's Time</h1>
+      <p class="subtitle">Your moment is now 🕰️</p>
+      <div class="timezone-form">
+        <label for="from-tz">🌍 From:</label>
+        <input type="text" id="from-tz" placeholder="e.g. Europe/Paris">
+      
+        <label for="to-tz">🗺️ To:</label>
+        <input type="text" id="to-tz" placeholder="e.g. Asia/Tokyo">
+      
+        <button class="btn" id="convert-btn">Convert Time</button>
+      </div>
+    </div>
+    <div class="clock">
+      <div class="outer-clock-face">
+        <div class="marking marking-one"></div>
+        <div class="marking marking-two"></div>
+        <div class="marking marking-three"></div>
+        <div class="marking marking-four"></div>
+        <div class="inner-clock-face">
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="to">To:</label>
-    <input type="text" id="toCity" placeholder="e.g. Tokyo">
-  </div>
-
-  <button id="searchBtn">Search</button>
-  <div id="result"></div>
   <script src="timezones.js"></script>
-  <script>
-    fetch("/timezones") 
-      .then(res => res.json())
-      .then(data => {
-        console.log("Time zone information: ", data);
-
-    document.getElementById("timezoneInput").value = data.timezone;
-    });
-  </script>
 </body>
 </html>

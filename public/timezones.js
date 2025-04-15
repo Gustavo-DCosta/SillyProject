@@ -1,3 +1,28 @@
+// clock ticking
+function setDate() {
+  const now = new Date();
+
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90; // 90 is offset
+  const secondHand = document.querySelector('.second-hand');
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  const minutes = now.getMinutes();
+  const minutesDegrees = ((minutes / 60) * 360) + ((seconds/60)*6) + 90;
+  const minHand = document.querySelector('.min-hand');
+  minHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+  const hours = now.getHours();
+  const hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30) + 90;
+  const hourHand = document.querySelector('.hour-hand');
+  hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+}
+
+// THIS is the magic line that makes the clock tick every second:
+setInterval(setDate, 1000); 
+// Optionally: setDate() once immediately so it doesn’t wait 1 sec to show
+setDate();
+
 const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 let userZone = timezone;
 fetch("/api/timezones", {
@@ -62,4 +87,3 @@ function getCookie(name) {
 }
 
 const savedZone = getCookie("Timezone") || "UTC"
-  
